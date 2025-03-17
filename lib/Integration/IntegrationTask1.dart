@@ -13,47 +13,35 @@
 
 
 
-
 class Task {
   String title;
   String description;
   bool isCompleted;
-  Task(this.title, this.description, this.isCompleted);
 
+  Task({required this.title, required this.description}) : isCompleted = false;
+
+  void toggleCompletion() {
+    isCompleted = !isCompleted;
+  }
 }
 
 void main() {
-  toggleTaskCompletion();
+  List<Task> tasks = [
+    Task(title: "deepak", description: "this is lists"),
+    Task(title: "raj", description: "this is new lists"),
+    Task(title: "lucky", description: "this is old list"),
+  ];
+
+  tasks[2].toggleCompletion();
+
+  displayPendingTasks(tasks);
 }
 
-void toggleTaskCompletion() {
-  List<Map<String, dynamic>> objects = [
-    {"title": "deepak", "description": "this is lists", "isCompleted": true},
-    {"title": "raj", "description": "this is new lists", "isCompleted": false},
-    {"title": "lucky", "description": "this is old list", "isCompleted": true},
-  ];
-  List<dynamic> m = [];
-  print("one");
-  m =
-      objects
-          .where((ele) => ele["isCompleted"] == true)
-          .map((ele) => ele["${"title"},${"description"} Task Completed"])
-          .toList();
-  print("${m.toList}");
-  print("two");
-  List<dynamic> k = [];
-  k =
-      objects
-          .where((ele) => ele["isCompleted"] == false)
-          .map((ele) => ele["${"title"},${"description"} Task was in Pending"])
-          .toList();
-  print("three");
-  List<dynamic> p = [];
-  for (int i = 0; i < k.length; i++) {
-    print("four");
-    p.add("${k[i]}");
-    print("five");
+void displayPendingTasks(List<Task> tasks) {
+  print("Pending Tasks:");
+  for (Task task in tasks) {
+    if (!task.isCompleted) {
+      print("- ${task.title}: ${task.description}");
+    }
   }
-  print("six");
-  print(p);
 }
