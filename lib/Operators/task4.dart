@@ -24,7 +24,24 @@ class _BitwiseOperationsState extends State<BitwiseOperations> {
   @override
   Widget build(BuildContext context) {
 
-int read=1,write =2,execute=4;
+class Permissions {
+  static const int READ = 1;   
+  static const int WRITE = 2;  
+  static const int EXECUTE = 4; 
+
+  static bool hasWritePermission(int userPermission) {
+    return (userPermission & WRITE) != 0;
+  }
+}
+
+void main() {
+  int userPermission1 = 3; 
+  int userPermission2 = 5; 
+  
+  print("User 1 has write permission: ${Permissions.hasWritePermission(userPermission1)}"); 
+  print("User 2 has write permission: ${Permissions.hasWritePermission(userPermission2)}"); 
+}
+
 
 
 
