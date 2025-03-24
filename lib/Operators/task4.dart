@@ -49,7 +49,7 @@ void main() {
       child: Scaffold(
         body: Column(
           children: [
-            Text("$result"),
+         //   Text("$result"),
           ],
         ),
       ),
