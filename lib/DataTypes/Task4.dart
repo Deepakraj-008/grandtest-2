@@ -22,14 +22,16 @@ class _DynamicDataStorageState extends State<DynamicDataStorage> {
   Widget build(BuildContext context) {
 
     types= "deepak";
+print(types.runtimeType);
     types= 24;
+print(types.runtimeType);
     types= true;
-
+print(types.runtimeType);
     return SafeArea(
       child: Scaffold(
         body: Column(
           children: [
-            Text("value is '$types' and the type of that value is '${types.runtimeType}'."),
+       //     Text("value is '$types' and the type of that value is '${types.runtimeType}'."),
           ],
         ),
       ),
