@@ -4,28 +4,36 @@
 // Create Circle and Rectangle classes that override area() differently.
 
 
+ import 'dart:math';
+
  class Shape {
-  void area(){
-    print("area");
-  }
+  double area() =>  area();
 }
 
 class Circle extends Shape {
+  double radius;
+
+  Circle(this.radius);
+
   @override
-  void area() {
-    print("Dog sound");
-  }
+  double area() => pi * radius * radius;
+  
 }
+
 class Rectangle extends Shape {
+  double width, height;
+
+  Rectangle(this.width, this.height);
+
   @override
-  void area() {
-    print("Cat sound");
-  }
+  double area() => width * height;
+  
 }
 
 void main() {
-  Shape sound = Circle();
-  Shape sounds = Rectangle();
-  sound.area();
-  sounds.area();
+  Shape circle = Circle(6.5);
+  Shape rectangle = Rectangle(30, 60);
+
+  print("Area of Circle = ${circle.area()}");      
+  print("Area of Rectangle = ${rectangle.area()}"); 
 }
