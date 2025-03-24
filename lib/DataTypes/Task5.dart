@@ -29,14 +29,27 @@ dynamic? result;
 
 
 
-Map<String, dynamic> user = {
+//capsulation with Getters and Setters
+// Modify the User class to have private variables and public getter/setter
+// methods.
+
+
+void main()
+{
+  Map<String, dynamic> user = {
   "username": "john_doe",
   "age": 24,
   "theme": "dark",
   "notifications": true,
   "preferences": ["music", "coding", "gaming"]
 };
-
+print(user);
+}
+void printUserSettings(Map<String, dynamic> settings) {
+ settings.forEach((key, value) {
+ print("$key $value");
+ });
+}
 
 
   @override
@@ -49,7 +62,7 @@ Map<String, dynamic> user = {
       child: Scaffold(
         body: Column(
           children: [
-            Text("$user "),
+           // Text("$user "),
           ],
         ),
       ),
