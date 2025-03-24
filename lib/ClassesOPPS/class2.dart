@@ -20,7 +20,7 @@ class User
 void main()
 {
   User _user=User("Deepak",24,"deepak@gmail.com");
-  print (_user._name);
-  print (_user._age);
-  print (_user._email);
+  print (_user.name);
+  print (_user.age);
+  print (_user.email);
 }
