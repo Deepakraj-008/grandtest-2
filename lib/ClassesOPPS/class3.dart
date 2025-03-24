@@ -18,6 +18,11 @@ class Button extends Widget {
 
   @override
   void data() {
-    print("This $text calculated by the $height and $width");
+    print("This $text button is calculated by the $height and $width");
   }
 }
+void main() {
+ Button myButton = Button("Submit", 100, 50);
+ myButton.data();
+}
+
